@@ -31,14 +31,49 @@
             * License: https://bootstrapmade.com/license/
             ======================================================== -->
         <script src="./plugins/jquery.min.js.download"></script>
+        <!-- GTranslate -->
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'id', includedLanguages: 'en', autoDisplay: false}, 'google_translate_element');
+            }
+        </script>
+        <style>
+            .floating-button {
+                position: fixed;
+                bottom: 15px;
+                right: 20px; /* Move to the left side */
+                width: 50px;
+                height: 50px;
+                background-color: #00bfff;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                border: none;
+                outline: none;
+                z-index: 1000; /* Ensure the button is on top */
+            }
+    
+            .floating-button img {
+                border-radius: 50px;
+                width: 35px;
+                height: 35px;
+                object-fit: cover;
+            }
+        </style>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </head>
+    
+    <button class="floating-button btn btn-sm py-0" onclick="gTranslate()"><img src="https://minio.umkt.ac.id/dev-umkt-media/dokumen/eng-flag.webp" height="30px" alt="EN"></button>
     <body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0" inmaintabuse="1">
-        <button type="button" class="mobile-nav-toggle d-lg-none"><i class="bi bi-list"></i></button>
+        <button type="button" class="mobile-nav-toggle d-lg-none" style="background-color: #46c2f0; padding: 5px; border-radius: 5px;"><i class="bi bi-list"></i></button>
         <!-- <div id="icphsbannerlogos">
             <img src="./images/logo-umkt.png" class="img-responsive image-fluid img-fluid">
             </div> -->
         <!-- ======= Header ======= -->
-        <header id="header" class="fixed-top d-flex align-items-center header-transparent ">
+        <header id="header" class="d-flex align-items-center header-transparent ">
             <div class="container d-flex align-items-center">
                 <div class="logo mr-auto">
                     <!-- h1 class="text-light"><a href="index.html">ICPHS 2020</a></h1 -->
@@ -50,7 +85,7 @@
                         <li class="active"><a href="#header">Home</a></li>
                         <li><a href="#pendahuluan">Pendahuluan</a></li>
                         <li><a href="#pembicara">Pembicara</a></li>
-                        <li><a href="#kepanitiaan">Kepanitiaan</a></li>
+                        <li><a href="#kepanitiaan">Panitia</a></li>
                         <li><a href="#program">Program</a></li>
                         <li><a href="#timeline">Timeline</a></li>
                         <li><a href="#panduan">Panduan</a></li>
@@ -63,6 +98,7 @@
         </header>
         <!-- End Header -->
         <!-- ======= Hero Section ======= -->
+        <div id="google_translate_element" hidden></div>
         <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
             <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
                 <!-- Slide 1 -->
@@ -75,28 +111,6 @@
                             <img src="./images/logo-main-nc-pharma.png" class="img-responsive image-fluid img-fluid" style="width: 700px;">
                             <p></p>
                         </h3>
-                    </div>
-                    <div class="text-center">
-                        <a type="button" href="https://bit.ly/registncpharma" target="_blank" style="
-                        background-color: #44C1EF;
-                        border: none;
-                        color: white;
-                        padding: 15px 32px;
-                        text-align: center;
-                        text-decoration: none;
-                        display: inline-block;
-                        font-size: 16px;
-                        margin: 4px 2px;
-                        cursor: pointer;
-                        border-radius: 20px;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                        transition: background-color 0.3s, transform 0.3s;
-                        " 
-                        onmouseover="this.style.backgroundColor='#87dfff'; this.style.transform='scale(1.05)';" 
-                        onmouseout="this.style.backgroundColor='#44C1EF'; this.style.transform='scale(1)';">
-                        <i class="bi bi-pen-fill"></i>&nbsp;
-                        Registrasi
-                        </a>
                     </div>
                 </div>
             </div>
@@ -854,8 +868,30 @@
                         <h2>NC-PHARMA</h2>
                     </div>
                     <div class="col content aos-init" data-aos="fade-up">
+                        
                         <div class="col">
+                            
                             <div class="text-center">
+                                <a type="button" href="https://bit.ly/registncpharma" target="_blank" style="
+                                background-color: #44C1EF;
+                                border: none;
+                                color: white;
+                                padding: 15px 32px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 16px;
+                                margin: 4px 2px;
+                                cursor: pointer;
+                                border-radius: 20px;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                transition: background-color 0.3s, transform 0.3s;
+                                " 
+                                onmouseover="this.style.backgroundColor='#87dfff'; this.style.transform='scale(1.05)';" 
+                                onmouseout="this.style.backgroundColor='#44C1EF'; this.style.transform='scale(1)';">
+                                <i class="bi bi-pen-fill"></i>&nbsp;
+                                Registrasi
+                                </a>
                                 <a type="button" href="https://forms.gle/L1FRUAUCg9ZRUyeZ8" target="_blank" style="
                                 background-color: #44C1EF;
                                 border: none;
@@ -925,11 +961,12 @@
                 <li class="active"><a href="#header">Home</a></li>
                 <li><a href="#pendahuluan">Pendahuluan</a></li>
                 <li><a href="#pembicara">Pembicara</a></li>
-                <li><a href="#kepanitiaan">Kepanitiaan</a></li>
+                <li><a href="#kepanitiaan">Panitian</a></li>
                 <li><a href="#program">Program</a></li>
                 <li><a href="#timeline">Timeline</a></li>
                 <li><a href="#panduan">Panduan</a></li>
                 <li><a href="#ketentuan">Ketentuan</a></li>
+                <li><a href="#submisi">Submisi</a></li>
             </ul>
         </nav>
         <div class="mobile-nav-overly"></div>
@@ -975,4 +1012,40 @@
             </div>
         </div>
     </body>
+    <!-- GTranslate -->
+    <script>
+        function gTranslate() {
+            // Trigger Google Translate
+            var $button = document.querySelector(".goog-te-combo");
+            if ($button) {
+                $button.dispatchEvent(new Event("mousedown"));
+                $button.value = "en";
+                $button.dispatchEvent(new Event("change"));
+                document.querySelector('.goog-te-combo').dispatchEvent(new Event('change'));
+            }
+
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){   
+            window.addEventListener('scroll', function() {
+                var translateToolbar = document.querySelector('.translated-ltr');
+                var translateToolbarContainer = document.getElementById(':1.container');
+                var navTop = document.getElementById('header');
+                const translateBtn = document.getElementById('floating-button');
+                const closeButton = document.querySelector('.VIpgJd-ZVi9od-TvD9Pc-hSRGPd');
+
+                if (window.scrollY > -1) {
+                    navTop.classList.add('fixed-top');
+                    if (translateToolbar) {
+                        navTop.style.marginTop = "30px";
+                    } else {
+                        navTop.style.marginTop = "";   
+                    }
+                } else {
+                    navTop.style.marginTop = '';
+                }
+            });
+        });
+    </script>
 </html>
